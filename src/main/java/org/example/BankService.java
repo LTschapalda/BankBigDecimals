@@ -24,4 +24,10 @@ public class BankService {
 
     //Implementiert eine Methode im BankService, von einer Kontonummer (als String)
     // einen bestimmten Betrag (als BigDecimal) auf eine andere Kontonummer (als String) zu überweisen.
+
+    public void transfer(Account accountA, Account accountB,BigDecimal transferAmount) {
+        accountA.setBalance(accountA.getBalance().subtract(transferAmount));
+        accountB.setBalance(accountB.getBalance().add(transferAmount));
+    }
+
 }
