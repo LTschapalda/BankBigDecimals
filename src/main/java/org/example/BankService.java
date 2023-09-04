@@ -1,6 +1,8 @@
 package org.example;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 public class BankService {
@@ -8,7 +10,9 @@ public class BankService {
     // Man soll dafür nur einen Kunden als Argument übergeben müssen.
     // Es soll die neue Kontonummer zurückgeben.
 
-    public Account openAccount(Client newClient){
+    Map<String,Account> accountList = new HashMap<>();
+
+    public String openAccount(Client newClient){
         int length = 10;
         Random accountNumber = new Random();
         StringBuilder randomAccountNumber = new StringBuilder(length);
@@ -18,7 +22,8 @@ public class BankService {
         }
         String newAccountNumber = randomAccountNumber.toString();
 
-        return new Account(newAccountNumber, BigDecimal.ZERO, newClient);
+        accountList.put(newAccountNumber,new Account(newAccountNumber,new BigDecimal("0.0"),newClient));
+        return newAccountNumber;
     }
 
 

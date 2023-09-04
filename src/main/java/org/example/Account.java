@@ -5,6 +5,8 @@ import java.util.Objects;
 
 public class Account {
 
+
+
     //Variablen
     private String accountNumber;
     private BigDecimal balance;
