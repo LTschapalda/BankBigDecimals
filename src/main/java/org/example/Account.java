@@ -12,7 +12,7 @@ public class Account {
 
     //Implementiert eine Methode, um Geld auf das Konto einzuzahlen.
 
-    public void addBalance(BigDecimal deposit){
+    public void deposit(BigDecimal deposit){
        balance = balance.add(deposit);
     }
 
