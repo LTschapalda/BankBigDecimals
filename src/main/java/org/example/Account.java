@@ -10,6 +10,17 @@ public class Account {
     private BigDecimal balance;
     private Client newClient;
 
+    //Implementiert eine Methode, um Geld auf das Konto einzuzahlen.
+
+    public void addBalance(BigDecimal deposit){
+       balance = balance.add(deposit);
+    }
+
+    //Implementiert eine Methode, um Geld vom Konto abzuheben.
+    public void withdraw(BigDecimal withdraw) {
+        balance = balance.subtract(withdraw);
+    }
+
     //Getter & Setter
     public String getAccountNumber() {
         return accountNumber;
